@@ -1,12 +1,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Hear the World</title>
 
     <style>
+        /* ========================================
+           1. GENERAL PAGE STYLING
+        ======================================== */
+
         * {
             box-sizing: border-box;
         }
@@ -15,7 +21,6 @@
             margin: 0;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #f5f5f0;
@@ -23,29 +28,73 @@
             color: #282b25;
         }
 
-        h1 {
-            margin-bottom: 24px;
+        /* ========================================
+           2. MAIN CONTAINER
+        ======================================== */
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            padding: 24px 16px;
         }
 
-        iframe {
-            max-width: 100%;
-            border: none;
+        /* ========================================
+           3. PAGE HEADING
+        ======================================== */
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
         }
+
+        /* ========================================
+           4. SCRATCH GAME PLAYER
+        ======================================== */
+
+        iframe {
+            display: block;
+            width: min(485px, calc(100vw - 32px));
+            height: 402px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* ========================================
+           5. RESPONSIVE DESIGN
+        ======================================== */
+
+        @media (max-width: 517px) {
+            iframe {
+                height: calc((100vw - 32px) * 0.83);
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
-    <h1>Hear the World</h1>
+    <main class="game-container">
 
-    <iframe
-        src="https://turbowarp.org/embed?project_url=https%3A%2F%2Fsaviraoktr.github.io%2Fhear-the-world%2Fhear%20the%20world.sb3"
-        width="485"
-        height="402"
-        allowtransparency="true"
-        scrolling="no"
-        allowfullscreen>
-    </iframe>
+        <h1>Hear the World</h1>
+
+        <iframe
+            src="https://turbowarp.org/embed?project_url=https%3A%2F%2Fsaviraoktr.github.io%2Fhear-the-world%2Fhear%20the%20world.sb3"
+            allowtransparency="true"
+            scrolling="no"
+            allowfullscreen>
+        </iframe>
+
+    </main>
 
 </body>
 </html>
